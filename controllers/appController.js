@@ -8,7 +8,15 @@ exports.profile = function (req, res, next) {
   res.json("NOT IMPLEMENTED: PROFILE PAGE");
 };
 exports.create_tweet = function (req, res, next) {
-  res.json("NOT IMPLEMENTED: NEW TWEET ROUTE");
+  var tweet = new Tweet({
+    author: req.body.author,
+    text: req.body.text,
+  }).save((err) => {
+    if (err) {
+      return next(err);
+    }
+    res.redirect("/");
+  });
 };
 
 exports.like_tweet = function (req, res, next) {

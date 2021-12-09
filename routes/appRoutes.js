@@ -7,7 +7,7 @@ router.get("/", appController.home);
 
 router.get("/profile", appController.profile);
 
-router.get("/create-tweet", appController.create_tweet);
+router.post("/create-tweet", appController.create_tweet);
 
 router.get("/like-tweet", appController.like_tweet);
 
