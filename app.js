@@ -18,6 +18,10 @@ db.on("error", console.error.bind(console, "mongo connection error"));
 // took model schema from here --> if it gets fucked up put it back here
 
 const app = express();
+///
+///still need to add a specific whitelisted domain now but the open cors policy will allow me to test if the connections are working.
+///
+app.use(cors());
 app.use(express.json());
 app.set("views", __dirname);
 app.set("view engine", "ejs");
